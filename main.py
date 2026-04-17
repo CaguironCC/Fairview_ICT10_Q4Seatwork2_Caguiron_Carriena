@@ -12,14 +12,11 @@ class Classmate:
         print(f"Hi! I am {self.name} from {self.section}. My favorite subject is {self.fav_subject}.")
 
 classmates = [
-    Classmate("Kristine", "Amethyst", "Math"),
-    Classmate("Jean", "Amethyst", "Science"),
-    Classmate("Hariette", "Amethyst", "English"),
-    Classmate("Jubilee", "Amethyst", "Math"),
-    Classmate("Vivian", "Amethyst", "History"),
-    Classmate("Luisito", "Topaz", "Math"),
-    Classmate("Renn", "Topaz", "Math"),
-    Classmate("Josua", "Topaz", "Math")
+    Classmate("Heleina", "Sapphire", "Social Studies"),
+    Classmate("Cas", "Sapphire", "PE"),
+    Classmate("Nia", "Sapphire", "Math"),
+    Classmate("Rohann", "Sapphire", "Lunch"),
+    Classmate("Nav", "Sapphire", "Math"),
 ]
 
 while True:
