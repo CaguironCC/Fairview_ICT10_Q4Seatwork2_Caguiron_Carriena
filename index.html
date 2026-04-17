@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classmates System</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .classmate {
+            background: #e3f2fd;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #2196f3;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+            padding-bottom: 10px;
+        }
+        
+        button:hover {
+            background: #45a049;
+        }
+        input {
+            padding: 8px;
+            margin: 5px;
+            width: 200px;
+        }
+        .form-group {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Grade 10 Classmates System</h1>
+    
+    <div id="classmateList">
+    </div>
+    
+    <hr>
+    
+    <h3>Add New Classmate</h3>
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="section" placeholder="Section">
+    <input type="text" id="subject" placeholder="Favorite Subject">
+    <button onclick="addClassmate()">Add Classmate</button><br>
+    <button onclick="showList()">Show List</button>
+</div>
+
+<script>
+    let classmates = [
+        
+    ];
+    
+    function showList() {
+        let listDiv = document.getElementById("classmateList");
+        listDiv.innerHTML = "<h2>Classmate List</h2>";
+        
+        for(let i = 0; i < classmates.length; i++) {
+            listDiv.innerHTML += `
+                <div class="classmate">
+                    Hi! I am ${classmates[i].name} from ${classmates[i].section}. 
+                    My favorite subject is ${classmates[i].subject}.
+                </div>
+            `;
+        }
+    }
+    
+    function addClassmate() {
+        let name = document.getElementById("name").value;
+        let section = document.getElementById("section").value;
+        let subject = document.getElementById("subject").value;
+        
+        if(name && section && subject) {
+            classmates.push({name: name, section: section, subject: subject});
+            showList(); 
+            alert(name + " has been added!");
+            
+            document.getElementById("name").value = "";
+            document.getElementById("section").value = "";
+            document.getElementById("subject").value = "";
+        } else {
+            alert("Please fill all fields!");
+        }
+    }
+    
+    showList();
+</script>
+</body>
+</html>
